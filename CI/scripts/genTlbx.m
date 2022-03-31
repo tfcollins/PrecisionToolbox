@@ -1,7 +1,7 @@
 function genTlbx(examples)
 
 if nargin==0
-    examples = 0;
+    examples = 1;
 end
 
 version = '21.1.1';
@@ -37,7 +37,7 @@ addpath(genpath(matlabshared.supportpkg.getSupportPackageRoot));
 addpath(genpath('.'));
 rmpath(genpath('.'));
 if examples
-    ps = {'doc','rfm_examples'};
+    ps = {'doc','examples'};
 else
     ps = {'doc'};
 end
@@ -54,9 +54,9 @@ rehash
 projectFile = 'bsp.prj';
 currentVersion = matlab.addons.toolbox.toolboxVersion(projectFile);
 if examples
-    outputFile = ['AnalogDevicesRFMicrowaveToolboxToolbox_v',currentVersion];
+    outputFile = ['AnalogDevicesPrecisionToolbox_v',currentVersion];
 else
-    outputFile = ['AnalogDevicesRFMicrowaveToolboxToolbox_noexamples_v',currentVersion];
+    outputFile = ['AnalogDevicesPrecisionToolbox_noexamples_v',currentVersion];
 end
 matlab.addons.toolbox.packageToolbox(projectFile,outputFile)
 
